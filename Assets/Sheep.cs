@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class Sheep : MonoBehaviour {
 
  
-    public int rangeDistance;
-    public int stuck;
+    public float rangeDistance;
+    public float tooClose;
     public float speed;
     public Transform sheep;
     public Transform player;
@@ -26,32 +26,34 @@ public class Sheep : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if ((Distance() < rangeDistance) && Distance() > stuck)
+        if ((Distance() < rangeDistance) && (Distance() < tooClose))
         {
-            flag = true;
+            runUnstuck();
+        }
+
+        if((Distance()<rangeDistance) && (Distance() > tooClose))
+        {
             run();
+        }
 
-        }
-        else
-        {
-            if (flag == false)
-            {
-                flag = true;
-                runOther();
-            }
-        }
+        //Debug.Log("Distance: " + Distance());
 
 
 
     }
 
-    void runOther()
+
+    void runUnstuck()
     {
-        Vector3 playerPos = player.position;
-        Vector3 sheepPos = sheep.position;
-        rb.AddForce((sheepPos + playerPos) * speed * Time.deltaTime);
+        float moveHorizontal =Random.Range(-3,3);
+        float moveVertical = Random.Range(-3,3);
+
+
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        rb.AddForce(movement * speed);
 
     }
+
 
     void run()
     {

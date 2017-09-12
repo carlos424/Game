@@ -7,6 +7,7 @@ TagManager:
   - Fire
   - Pick Up
   - Fence
+  - Sheep
   layers:
   - Default
   - TransparentFX

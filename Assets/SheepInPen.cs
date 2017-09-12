@@ -11,7 +11,7 @@ public class SheepInPen : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        count = 2;
+        count = 1;
         setCountText();
 
     }
@@ -26,12 +26,12 @@ public class SheepInPen : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Fence"))
+        if (other.gameObject.CompareTag("Sheep"))
         {
             AudioSource audio = GetComponent<AudioSource>();
             audio.Play();
             other.gameObject.SetActive(false);
-            Debug.Log("Trigger: " + count);
+            //Debug.Log("Trigger: " + count);
             count--;
             setCountText();
         }
