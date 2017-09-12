@@ -23,10 +23,12 @@ public class Sheep : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Distance() < rangeDistance)
+        if (Distance() <= rangeDistance)
         {
             run();
         }
+
+        Debug.Log("Distance: " + Distance());
 
 
     }
@@ -38,7 +40,7 @@ public class Sheep : MonoBehaviour {
         float moveVertical = player.position.z;
 
 
-        Vector3 movement = new Vector3(-moveHorizontal, 0.0f, moveVertical);
+        Vector3 movement = new Vector3(-moveHorizontal, 0.0f, -moveVertical);
         rb.AddForce(movement * speed);
 
     }

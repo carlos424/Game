@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Assets\CameraController.cs" />
     <Compile Include="Assets\Controller.cs" />
+    <Compile Include="Assets\Controller2.cs" />
     <Compile Include="Assets\RotatingCollectable.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />

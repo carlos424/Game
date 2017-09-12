@@ -10,7 +10,6 @@ public class SceneSwitch2 : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        SceneManager.UnloadScene("_Scenes");
 
     }
 
