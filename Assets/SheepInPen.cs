@@ -11,7 +11,7 @@ public class SheepInPen : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        count = 1;
+        count = 2;
         setCountText();
 
     }
@@ -31,7 +31,6 @@ public class SheepInPen : MonoBehaviour {
             AudioSource audio = GetComponent<AudioSource>();
             audio.Play();
             other.gameObject.SetActive(false);
-            //Debug.Log("Trigger: " + count);
             count--;
             setCountText();
         }

@@ -8,13 +8,10 @@ public class Sheep : MonoBehaviour {
 
  
     public float rangeDistance;
-    public float tooClose;
     public float speed;
     public Transform sheep;
     public Transform player;
     private Rigidbody rb;
-    private bool flag;
-
 
     // Use this for initialization
     void Start () {
@@ -26,31 +23,11 @@ public class Sheep : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if ((Distance() < rangeDistance) && (Distance() < tooClose))
-        {
-            runUnstuck();
-        }
-
-        if((Distance()<rangeDistance) && (Distance() > tooClose))
+        if (Distance() < rangeDistance)
         {
             run();
         }
 
-        //Debug.Log("Distance: " + Distance());
-
-
-
-    }
-
-
-    void runUnstuck()
-    {
-        float moveHorizontal =Random.Range(-3,3);
-        float moveVertical = Random.Range(-3,3);
-
-
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(movement * speed);
 
     }
 
@@ -61,8 +38,8 @@ public class Sheep : MonoBehaviour {
         float moveVertical = player.position.z;
 
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(movement*speed);
+        Vector3 movement = new Vector3(-moveHorizontal, 0.0f, moveVertical);
+        rb.AddForce(movement * speed);
 
     }
 
