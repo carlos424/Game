@@ -11,7 +11,7 @@ public class SheepInPen : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        count = 2;
+        count = 3;
         setCountText();
 
     }
