@@ -52,5 +52,11 @@ public class Controller : MonoBehaviour {
         }
     }
 
+    public void OnMouseButton1()
+    {
+
+        SceneManager.LoadScene("Menu");
+    }
+
 
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Controller2 : MonoBehaviour {
 
@@ -30,4 +31,11 @@ public class Controller2 : MonoBehaviour {
     void Update () {
 		
 	}
+
+
+    public void OnMouseButton1()
+    {
+
+        SceneManager.LoadScene("Menu");
+    }
 }
